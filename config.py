@@ -25,6 +25,7 @@ class Config:
         DEBUG = False
         ALLOWED_HOSTS = [environ.get('WEBSITE_HOSTNAME')] if 'WEBSITE_HOSTNAME' in os.environ else []
         CSRF_TRUSTED_ORIGINS = ['https://'+ environ.get('WEBSITE_HOSTNAME')] if 'WEBSITE_HOSTNAME' in os.environ else []
+        
         # Configure Postgres database; the full username for PostgreSQL flexible server is
         # username (not @sever-name).
         DATABASE_URI = 'postgresql+psycopg2://{dbuser}:{dbpass}@{dbhost}/{dbname}'.format(
